@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
@@ -9,7 +10,10 @@ const CreateStudent = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log(formData);
+        axios.post('http://localhost:4000/students/create-student', formData)
+            .then(res => console.log(res.data));
+
+        setFormData({ name: '', email: '', rollno: '' });
     }
 
     return (
