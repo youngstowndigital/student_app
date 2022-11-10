@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import CreateStudent from './components/CreateStudent';
 import EditStudent from './components/EditStudent';
 import StudentList from './components/StudentList';
@@ -43,28 +43,26 @@ function App() {
           <Row>
             <Col md={12}>
               <div className="wrapper">
-                <Switch>
-                  <Route
-                    exact
-                    path="/"
-                    component={(props) => <CreateStudent {...props} />}
-                  />
-                  <Route
-                    exact
-                    path="/create-student"
-                    component={(props) => <CreateStudent {...props} />}
-                  />
-                  <Route
-                    exact
-                    path="/edit-student/:id"
-                    component={(props) => <EditStudent {...props} />}
-                  />
-                  <Route
-                    exact
-                    path="/student-list"
-                    component={(props) => <StudentList {...props} />}
-                  />
-                </Switch>
+                <Route
+                  exact
+                  path="/"
+                  component={(props) => <CreateStudent {...props} />}
+                />
+                <Route
+                  exact
+                  path="/create-student"
+                  component={(props) => <CreateStudent {...props} />}
+                />
+                <Route
+                  exact
+                  path="/edit-student/:id"
+                  component={(props) => <EditStudent {...props} />}
+                />
+                <Route
+                  exact
+                  path="/student-list"
+                  component={(props) => <StudentList {...props} />}
+                />
               </div>
             </Col>
           </Row>
